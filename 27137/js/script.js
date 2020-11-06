@@ -3,6 +3,7 @@ function kwadraty(tablica){
     for(let i=0; i<tablica.length; i++ ){
     sum += Math.pow(tablica[i],2);
     }   
-    console.log(sum);
+    //console.log(sum);
+    return(sum);
  }
- kwadraty([1, 2, 3, 4, 5, 6]); 
+ console.log(kwadraty([1, 2, 3, 4, 5, 6]); 
