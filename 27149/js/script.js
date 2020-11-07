@@ -1,54 +1,36 @@
 
-var flagWyp;
+var flagComplete;
 function bubbles(arayToSort){
     let dlugosc = arayToSort.length-1;
-    let arayEtalon = arayToSort;
-    console.log("Etalon"+arayEtalon);
+    let arayWynnik =[];
+    let buf1;
+    let buf2;
     console.log("bubles start");
     console.log("dlugisc "+dlugosc);
 
-    for(i=0;i<dlugosc;i++){
-        flagWyp=0;
-
+    for(i=1;i<dlugosc;i++){
+        flagComplete=0;
         console.log("cikl "+i);
 
         for(j=0;j<dlugosc-i;j++){
-            arayToSort[j] = compare(arayEtalon[j],arayEtalon[j+1]);
+            if(arayToSort[j]>arayToSort[j+1]){
+                buf1 = arayToSort[j];   // buf1 oraz drugi nie są zmianny a linki do arayToSort[x]
+                buf2 = arayToSort[j+1]; // z tego powodu nie wiem w jaki sposob odczytac i zrobic to statycznym na czas poruwnania
+                                        // nie jestem pewny ale byc moge sprobowalem by nagrać zmianny na HDD ale tem sposob jest brzydki
+                                        
+                arayToSort[j+1] = buf1; // buf1 and buf2 are the links to arayToSort[x] and I do not know how to make it's value static
+                arayToSort[j]=buf2;     // this logic of code will works in another programic languages
 
-            console.log("ineration "+j);
+            
+            } 
         }
-        if(flagWyp == 0){
+        if(flagComplete == 0){
             console.log("flag up");
             break;
-
-        } 
+            } 
     }
-    console.log("Etalon"+arayEtalon);
-    console.log("return bubles complete");
-    return arayToSort;
-    
-   
+    console.log("return bubles complete " + arayToSort);
 }
-
-function compare(pervszy, drugi){
-    console.log("compare start");
-    if (pervszy>drugi){
-        return drugi;
-        flagWyp = 1;
-
-    } else 
-    return pervszy;
-}
-
-// Array.prototype.swap = function (x,y) {
-//     var b = this[x];
-//     this[x] = this[y];
-//     this[y] = b;
-//     return this;
-//   }
-
-
-
 
 
 console.log(bubbles([12, 67, 34, 23.01, 24, 2, 56, 8, 0x10, 23.02, 78, 34, 1e2, 45, 67, 98, 1]));
