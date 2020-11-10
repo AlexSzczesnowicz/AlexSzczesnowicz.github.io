@@ -1,33 +1,35 @@
 
-var flagComplete;
+//var flagComplete;
 function bubbles(arayToSort){
     let dlugosc = arayToSort.length-1;
-    let arayWynnik =[];
+   // let arayWynnik =[];
     let buf1;
-    let buf2;
+    //let buf2;
     console.log("bubles start");
     console.log("dlugisc "+dlugosc);
 
-    for(i=1;i<dlugosc;i++){
-        flagComplete=0;
+    for(let i=0;i<dlugosc;i++){
+        //flagComplete=0;
         console.log("cikl "+i);
 
-        for(j=0;j<dlugosc-i;j++){
+        for(let j=0;j<dlugosc-i;j++){
             if(arayToSort[j]>arayToSort[j+1]){
-                buf1 = arayToSort[j];   // buf1 oraz drugi nie są zmianny a linki do arayToSort[x]
-                buf2 = arayToSort[j+1]; // z tego powodu nie wiem w jaki sposob odczytac i zrobic to statycznym na czas poruwnania
+                buf1 = arayToSort[j+1];   // buf1 oraz drugi nie są zmianny a linki do arayToSort[x]
+                                            // buf2 = arayToSort[j+1]; // z tego powodu nie wiem w jaki sposob odczytac i zrobic to statycznym na czas poruwnania
                                         // nie jestem pewny ale byc moge sprobowalem by nagrać zmianny na HDD ale tem sposob jest brzydki
                                         
-                arayToSort[j+1] = buf1; // buf1 and buf2 are the links to arayToSort[x] and I do not know how to make it's value static
-                arayToSort[j]=buf2;     // this logic of code will works in another programic languages
+                arayToSort[j+1] = arayToSort[j] ; 
+                arayToSort[j] = buf1;
+                // buf1 and buf2 are the links to arayToSort[x] and I do not know how to make it's value static
+              // =buf2;     // this logic of code will works in another programic languages
 
             
             } 
         }
-        if(flagComplete == 0){
-            console.log("flag up");
-            break;
-            } 
+        // if(flagComplete == 0){
+        //     console.log("flag up");
+        //     break;
+        //     } 
     }
     console.log("return bubles complete " + arayToSort);
 }
