@@ -1,13 +1,14 @@
 let cities = ['Warsaw', 'Berlin', 'Paris', 'London', 'New York', 'Tokio', 'Moscow'];
-
+let blok = document.getElementById('1');
+//blok.setAttribute('id', 'blok1');
 function makeSpis(miasta){
     for (i=0; i<miasta.length;i++) {
         let liElement = document.createElement('li');
         liElement.setAttribute('id', "elem"+i);
         let liMiast = document.createTextNode(miasta[i]);
         liElement.appendChild(liMiast);        
-        //document.appendChild(liElement);
-        console.log(liElement);
+        blok.appendChild(liElement);
+        //console.log(liElement);
     
     }
 }
