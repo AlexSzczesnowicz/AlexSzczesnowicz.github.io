@@ -28,11 +28,18 @@ const submitForm =(event)=>{
 }
 function validate(varun1, varun2, varun3, varun4){
     console.log('validate starts')
-    if (varun1.length>0 && varun2.length>0 && varun3.toString().icludes('@') && varun4==true){
+    if (varun1.length>0 && varun2.length>0 &&fuckingStringIncludeValidate(varun3) && varun4==true){
         console.log("works");
-        //console.log(varun1.length);
+        //console.log(varun1.length); /*varun3.toString().icludes('@') from line 31 - dosn't work*/
     }
 
+}
+function fuckingStringIncludeValidate(stringToValidate){ //not works too :(
+    if(isNaN(stringToValidate.indexOf("@"))){
+        return false; 
+    } else{
+        return true;
+    }
 }
 
 
