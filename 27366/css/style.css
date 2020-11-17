@@ -1,0 +1,13 @@
+#kvadrat{
+    width: 200px;
+    height: 200px;
+    margin-left: 30%;
+    background-color: aqua;
+
+}
+#knopka{
+    width: 100px;
+    height: 2em;
+    margin-top: 3em;
+    margin-left: 30%;
+}

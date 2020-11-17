@@ -34,8 +34,8 @@ function validate(varun1, varun2, varun3, varun4){
     }
 
 }
-function fuckingStringIncludeValidate(stringToValidate){ //not works too :(
-    if(isNaN(stringToValidate.indexOf("@"))){
+function fuckingStringIncludeValidate(stringToValidate){ //now works
+    if(stringToValidate.indexOf("@")<0){
         return false; 
     } else{
         return true;
