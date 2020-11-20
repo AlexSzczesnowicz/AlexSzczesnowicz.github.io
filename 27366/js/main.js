@@ -2,15 +2,18 @@ $(document).ready(function(){
 
 $('#knopka').click(function(){
     $('#kvadrat').animate({
-        right:'100px', height:'100px',width:'100px'
+        right:'100px', 
+        height:'100px',
+        width:'100px'
     },3000, function(){
-        $('#kvadrat').css({backgroundColor:'red'
-        },5000
-    );
+        $('#kvadrat').animate({
+            backgroundColor: "blue",
+          }, 1000 );
+    });
+    setTimeout(()=>{$('#kvadrat').append('<h2>animacja</h2>');},3000);
 });
 });
-});
-
+// почему не ьерутся данные о положении Х2 из ЦСС файла, как их взять
 
         //$('#kvadrat').animate({backgroundColor:'#4E1402'},1000);
         //setTimeout($('#kvadrat').css({backgroundColor:'#4E1402'},1000),3000);
